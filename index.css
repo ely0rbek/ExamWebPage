@@ -1,0 +1,364 @@
+* {
+  font-family: Roboto;
+}
+body {
+  background-color: #121214;
+}
+nav {
+  font-size: 16px;
+}
+
+.navbara {
+  width: 10%;
+  margin-left: 5%;
+  margin-right: 3%;
+  /* border: 1px solid blue; */
+}
+
+#logo {
+  width: 100%;
+}
+
+#collapsibleNavId1 {
+  width: 78%;
+  margin-right: 4%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.advice {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: #0033ff;
+  color: white;
+}
+
+.advice > a {
+  color: white;
+  text-decoration: none;
+  padding-left: 20px;
+}
+
+.step {
+  width: 100%;
+  border: 1px solid transparent;
+  /* border: none; */
+  background-image: url("https://s3-alpha-sig.figma.com/img/fc83/009f/b8ef00549cc355e8f55978f7882f1cab?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=R7g5e~JwtLsnS54kXG8PJc6TBLyGhTu62YJFMxCzg4kPH30~Z5sNq7Xc0WY7A74KnwBzHLSngskrh5PLgBHExFs-IPU2bkJvy7iAMDydP~FslnmZxTyLH6uxtQ3wDtxkvC0ebyOMK3586GVgQRAVUnUTLbvC3RXPHEX77OHP3VNohI90CwwOvQWe8ZgxqpHHK4~A2TK~dg8u7K~3QCssVHx9UIhlgu83VHq2Am8Kw12w1DjAAzPj~Db25s79SY0~AB1BOPocQDSDjy7sdn6RXQr70E7p7zZTy7biIXfBE9UeFp~GuAkshUJYyp~g5Buq6xSu3a7lpObX0dhG1jKCqg__");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.empty {
+  width: 30%;
+  margin-left: 10%;
+  margin-top: 150px;
+  /* border: 1px solid darkgoldenrod; */
+}
+
+.empty > p:first-child {
+  color: white;
+  font-size: 72px;
+  line-height: 72px;
+}
+
+.empty > p:nth-child(2) {
+  margin-top: 30px;
+  color: white;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.try {
+  margin-top: 30px;
+  padding: 15px 40px;
+  background-color: #0033ff;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+.learn {
+  background: transparent;
+  border: none;
+  margin-left: 45%;
+  margin-top: 200px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: white;
+}
+
+.sound,
+.connection {
+  width: 100%;
+  background-color: #121214;
+  color: white;
+  display: flex;
+}
+
+.yozuv {
+  margin-left: 7%;
+  margin-top: 245px;
+}
+
+.sound > img {
+  width: 55%;
+  margin-top: 100px;
+  margin-left: 70px;
+}
+
+.yozuv > pre {
+  font-size: 16px;
+  color: #a6a8ad;
+}
+
+.teskari {
+  direction: rtl;
+  text-align: right;
+  /* border: 1px solid green; */
+  margin-left: 10%;
+  margin-top: 170px;
+}
+
+.connection > img {
+  /* border: 1px solid red; */
+  margin-left: 5%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 45%;
+}
+
+/* -------------------------- */
+
+article {
+  --img-scale: 1.001;
+  --title-color: black;
+  --link-icon-translate: -20px;
+  --link-icon-opacity: 0;
+  margin-bottom: 100px;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: none;
+  background: #fff;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+article a::after {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  cursor: pointer;
+  content: "";
+}
+
+/* basic article elements styling */
+article h2 {
+  margin: 0 0 18px 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.9rem;
+  letter-spacing: 0.06em;
+  color: var(--title-color);
+  transition: color 0.3s ease-out;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  height: 270px;
+}
+
+article img {
+  /* max-width: 100%; */
+  width: 50%;
+  height: 230px;
+  margin-left: 14%;
+  margin-top: 30px;
+  border-radius: 100%;
+  transform-origin: center;
+  transform: scale(var(--img-scale));
+  transition: transform 0.4s ease-in-out;
+}
+
+.article-body {
+  padding: 24px;
+}
+
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #28666e;
+}
+
+article a:focus {
+  outline: 1px dotted #28666e;
+}
+
+article a .icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  transform: translateX(var(--link-icon-translate));
+  opacity: var(--link-icon-opacity);
+  transition: all 0.3s;
+}
+
+/* using the has() relational pseudo selector to update our custom properties */
+article:has(:hover, :focus) {
+  --img-scale: 1.1;
+  --title-color: #28666e;
+  --link-icon-translate: 0;
+  --link-icon-opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+/************************ 
+  Generic layout (demo looks)
+  **************************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.articles {
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+@media screen and (max-width: 960px) {
+  article {
+    container: card/inline-size;
+  }
+
+  .article-body p {
+    display: none;
+  }
+}
+
+@container card (min-width: 380px) {
+  .article-wrapper {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+
+  .article-body {
+    padding-left: 0;
+  }
+
+  figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  figure img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.cards {
+  width: 100%;
+  background-color: #121214;
+}
+
+.cards > h1 {
+  font-size: 28px;
+  margin-left: 11%;
+  margin-bottom: 30px;
+  /* margin-top: 50px; */
+  color: white;
+}
+
+.start {
+  width: 100%;
+  background-image: url("https://s3-alpha-sig.figma.com/img/ad20/a7c0/662577f4bbd91638c2abdf925a04f123?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=C6-QM-N~OHVRnOjVgC2my1wa6Loj~hThFu6jLSrvAySoqP2sIf1BhvL~8QpjYL5ZGYIiGcHig-YJV96FaRcZcqTOGF9ilm23G1PDVfb11wOuV6kNVhSN~pz4P2t4sZWjIiZCnfEj2y0IJoykAF5Z9gA8i~aDKC7xADVPblz30WPyBsz3wlTyAr7CakXdVzCs8Ah~2pN4waKL7DNq4SjWicV9xMGdYiP8nTMA4eR-zSC2nEfY9IUY4hT01Q7KOhw7I8g-IT5HFOb7lnOdrRj4uT4xDeR-AJzY~VQj6zySpBt-UIYHMXWCBJa1iain8HTbFppnjkx86O9iXsJAakfBkQ__");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.start > h1 {
+  color: white;
+  font-size: 54px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.just {
+  margin-top: 300px;
+  border: none;
+}
+
+.lastButton {
+  margin-top: 40px;
+  margin-bottom: 200px;
+  margin-left: 46%;
+}
+
+footer {
+  width: 100%;
+  background-color: #121214;
+}
+.first {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 70px;
+}
+.item > a {
+  display: block;
+  font-size: 14px;
+  margin-top: 15px;
+  color: #a6a8ad;
+  line-height: 18px;
+  text-decoration: none;
+}
+.item > h1 {
+  font-size: 20px;
+  color: #ffffff;
+  line-height: 24px;
+}
+
+.second {
+  width: 60%;
+  margin-left: 5%;
+  margin-top: 100px;
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: space-around;
+}
+.second > a {
+  font-size: 14px;
+  /* margin-top: 15px; */
+  color: #a6a8ad;
+  line-height: 18px;
+  text-decoration: none;
+}
